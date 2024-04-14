@@ -1,9 +1,9 @@
-const parseQuery = require('../src/queryParser');
-const readCSV = require('../src/csvReader');
+const parseQuery = require('./queryParser');
+const readCSV = require('./csvReader');
 
 async function executeSELECTQuery(query) {
     const { fields, table } = parseQuery(query);
-    const data = await readCSV(`../../src/sample.csv`);  // replaced ${table} with file path 
+    const data = await readCSV(`${table}.csv`);
     
     // Filter the fields based on the query
     return data.map(row => {
