@@ -3,7 +3,7 @@ const readCSV = require('./csvReader');
 
 async function executeSELECTQuery(query) {
     const { fields, table } = parseQuery(query);
-    const data = await readCSV(`../../src/${table}.csv`);
+    const data = await readCSV(`./src/${table}.csv`);
     
     // Filter the fields based on the query
     return data.map(row => {
